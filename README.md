@@ -29,10 +29,10 @@ This is opensource mining pool for Neoxa, Please visit [Neoxa](https://www.neoxa
 -------
 ### Requirements
 ***NOTE:*** _These requirements will be installed in the install section!_<br />
-* Ubuntu Server 18.04.* LTS
+* Ubuntu Server 18.04, 20.04, 22.04  LTS
 * Coin daemon
 * Node Version Manager
-* Node 12.13.0
+* Works best with Node 12.13.0, Node 14 works for some. Make changes to install.sh
 * Process Manager 2 / pm2
 * Redis Server
 * ntp
@@ -53,26 +53,26 @@ This is opensource mining pool for Neoxa, Please visit [Neoxa](https://www.neoxa
     echo "rpcpassword=pass1" >> ~/.neoxa/neoxa.conf
     echo "prune=550" >> ~/.neoxa/neoxa.conf
     echo "daemon=1" >> ~/.neoxa/neoxa.conf
-    chmod +x neoxad 
-    chmod +x neoxa-cli
+    chmod 777 neoxad 
+    chmod 777 neoxa-cli
     ./neoxad
     ./neoxa-cli getnewaddress
 
-Example output: GcyPqoF5gUNGR1vwG1KofWKVmhrhdSsUPF - it is the address of your pool, you need to remember it and specify it in the configuration file pool_configs/neoxacoin.json.
+Example output: GYPfJyGncfg8royvPyCdACBLDnzEhHLEUT - it is the address of your pool, you need to remember it and specify it in the configuration file pool_configs/neoxacoin.json.
     
-    neoxa-cli getaddressesbyaccount ""
+    ./neoxa-cli getaddressesbyaccount ""
     
 Information about pool wallet address.
     
-    neoxa-cli getwalletinfo
+    ./neoxa-cli getwalletinfo
     
 Get more information.
 
-    neoxa-cli getblockcount
+    ./neoxa-cli getblockcount
     
 Information about synchronization of blocks in the main chain.
 
-    neoxa-cli help
+    ./neoxa-cli help
 Other helpfull commands.
 
 -------
@@ -84,6 +84,7 @@ Other helpfull commands.
     git config --global http.https://gopkg.in.followRedirects true
     git clone https://github.com/NeoxaChain/kawpow-pool
     cd kawpow-pool/
+    chmod 777 install.sh
     ./install.sh
 
 -------
@@ -250,7 +251,7 @@ Create a pool config for you coins:
     
     mv pool_configs/neoxa_example.json pool_configs/neoxa.json
 
-Change "address": "GXUJSRkFHc6AJXMRyZTcA1xorKkXpU2RRe", to your pool created wallet address in file neoxa.json:
+Change "address": "GYPfJyGncfg8royvPyCdACBLDnzEhHLEUT", to your pool created wallet address in file neoxa.json:
 
     cd pool_configs
     nano neoxa.json
@@ -260,12 +261,12 @@ Change "address": "GXUJSRkFHc6AJXMRyZTcA1xorKkXpU2RRe", to your pool created wal
     "enabled": true,
     "coin": "neoxa.json",
 
-    "address": "GXUJSRkFHc6AJXMRyZTcA1xorKkXpU2RRe",
+    "address": "GYPfJyGncfg8royvPyCdACBLDnzEhHLEUT",
     
-    "donateaddress": "GXUJSRkFHc6AJXMRyZTcA1xorKkXpU2RRe",
+    "donateaddress": "GYPfJyGncfg8royvPyCdACBLDnzEhHLEUT",
 
     "rewardRecipients": {
-	    "GXUJSRkFHc6AJXMRyZTcA1xorKkXpU2RRe":0.5
+	    "GYPfJyGncfg8royvPyCdACBLDnzEhHLEUT":0.1
     },
 
     "paymentProcessing": {
