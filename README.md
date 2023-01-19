@@ -60,7 +60,7 @@ This is opensource mining pool for Neoxa, Please visit [Neoxa](https://www.neoxa
 
 Example output: GYPfJyGncfg8royvPyCdACBLDnzEhHLEUT - it is the address of your pool, you need to remember it and specify it in the configuration file pool_configs/neoxacoin.json.
     
-    ./neoxa-cli getaddressesbyaccount ""
+    ./neoxa-cli getaddressesbyaccount
     
 Information about pool wallet address.
     
